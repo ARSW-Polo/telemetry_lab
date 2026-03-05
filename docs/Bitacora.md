@@ -18,11 +18,17 @@ Cuando acabes no olvides ayudarnos evaluando tu ⭐[experiencia](https://forms.o
 
 ### 1.1. Información de la instancia EC2
 
+## DNS público
+
+ec2-13-221-75-105.compute-1.amazonaws.com
+![alt text](image-1.png)
+
+
 ### 1.2. Verificación del despliegue
 
 **¿La aplicación se desplegó correctamente?** 
 
-- [ ] Sí
+- [X] Sí
 - [ ] No
 
 **Captura de pantalla de la aplicación funcionando:**
@@ -32,7 +38,7 @@ Cuando acabes no olvides ayudarnos evaluando tu ⭐[experiencia](https://forms.o
 ### 1.3. Observaciones y problemas encontrados (opcional)
 ```
 
-
+Se tuvieron 2 inconvenientes pequeños, que tuvieron una raiz similar, estos se dieron al realizar el docker compose, inicialmente ya que lo intente realizar en la carpeta que no era, y el segun fue al intentar realizar el docker compose up sin haber reiniciado la instancia.
 
 ```
 
