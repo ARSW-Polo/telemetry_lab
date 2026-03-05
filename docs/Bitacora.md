@@ -50,10 +50,10 @@ Se tuvieron 2 inconvenientes pequeños, que tuvieron una raiz similar, estos se 
 
 **Endpoints probados:**
 
-- [ ] `GET /api/`
-- [ ] `POST /api/shorten`
-- [ ] `GET /api/{shortCode}`
-- [ ] `GET /api/urls`
+- [X] `GET /api/`
+- [X] `POST /api/shorten`
+- [X] `GET /api/{shortCode}`
+- [X] `GET /api/urls`
 
 
 ### 2.0.2. Análisis de dos métricas relevantes
@@ -62,33 +62,36 @@ Se tuvieron 2 inconvenientes pequeños, que tuvieron una raiz similar, estos se 
 
 **Nombre de la métrica:**  
 ```
-
+Número de solicitudes HTTP
 ```
 
 **Tipo de métrica:** 
 - [ ] Counter
-- [ ] Gauge 
+- [X] Gauge 
 - [ ] Histogram 
 - [ ] Summary
 
 **Descripción de qué información aporta:**
 ```
+# TYPE http_server_requests_active_seconds_max gauge
+http_server_requests_active_seconds_max{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN",} 0.001636968
+http_server_requests_active_seconds_max{exception="none",method="POST",outcome="SUCCESS",status="200",uri="UNKNOWN",} 0.0
+# HELP http_server_requests_active_seconds
 
-
+Esta métrica nos indica e tiempo máximo en segundos que le toma a el servidor en responder, en este caso el valor fue de 0.001636968
 
 ```
 
 **Relación con otras métricas (si aplica):**
 ```
-Ejemplo: Un aumento en peticiones HTTP podría influir en el uso de CPU
 
+Un aumento en el uso de cpu alto, puede ocasionar altos retrasos en el tiempo de recepción de solicitudes. Así como multiples solicitudes inesperadas podrían ocasionar que la cantidad máxima de solicitudes se alcance y hayan tiempos de espera inaceptablemente altos.
 
 ```
 
 **¿En que escenarios puede ayudar esta métrica?**
 ```
-
-
+Para identificar tiempos de retraso, y así preveer y tomar acciones necesarias como por ejemplo esacalar la instancia. De esta manera mantener la disponibilidad.
 
 ```
 
@@ -96,7 +99,7 @@ Ejemplo: Un aumento en peticiones HTTP podría influir en el uso de CPU
 ```
 Ejemplo: uri, method, status, instance, job, etc.
 
-
+Type se utiliza como separador de métricas, donde nos da las generalidades de este, y la etiqueta HELP realiza la especificación de la métrica.
 
 ```
 
@@ -106,7 +109,7 @@ Ejemplo: uri, method, status, instance, job, etc.
 
 **Nombre de la métrica:**  
 ```
-
+process_cpu_usage
 ```
 
 **Tipo de métrica:** 
@@ -117,22 +120,25 @@ Ejemplo: uri, method, status, instance, job, etc.
 
 **Descripción de qué información aporta:**
 ```
+# HELP process_cpu_usage The "recent cpu usage" for the Java Virtual Machine process
+# TYPE process_cpu_usage gauge
+process_cpu_usage 0.002688172043010753
 
-
+Esta métrica nos indica el uso de cpu reciente
 
 ```
 
 **Relación con otras métricas (si aplica):**
 ```
-Ejemplo: Un aumento en peticiones HTTP podría influir en el uso de CPU
 
+El uso de cpu puede aumentar según la cantidad de peticiones realizadas a el servidor.
 
 ```
 
 **¿En que escenarios puede ayudar esta métrica?**
 ```
 
-
+Esta métrica ayudaría en situaciones donde se deban tomar decisiones de disponibilidad para los usuarios, de manera que se puede identificar, porr ejemplo, cuanto y cuando escalar la instancia.
 
 ```
 
@@ -140,7 +146,7 @@ Ejemplo: Un aumento en peticiones HTTP podría influir en el uso de CPU
 ```
 Ejemplo: uri, method, status, instance, job, etc.
 
-
+Type se utiliza como separador de métricas, donde nos da las generalidades de este, y la etiqueta HELP realiza la especificación de la métrica.
 
 ```
 
