@@ -199,7 +199,7 @@ Consejo: Si usaste la interfaz de Grafana para crear el panel, puedes copiar la 
 
 **Captura de pantalla:**
 
-> _[Inserta aquí la imagen del panel]_
+![alt text](image.png)
 
 **Análisis (2-3 frases):**
 ```
@@ -247,7 +247,7 @@ Consejo: Si usaste la interfaz de Grafana para crear el panel, puedes copiar la 
 
 **Captura de pantalla:**
 
-> _[Inserta aquí la imagen del panel]_
+![alt text](image-2.png)
 
 **Análisis (2-3 frases):**
 ```
